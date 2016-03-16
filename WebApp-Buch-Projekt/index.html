@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="de">
+	<head> 
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Roll the dice!</title>
+		<style>
+		body{
+			text-align:center;
+			background: #8e44ad;
+			color: #ecf0f1;
+			font: bold 20px Futura, sans-serif;
+		}
+		button{
+			font: bold 20px Futura, sans-serif;
+			color: #8e44ad;
+			background: #ecf0f1;
+			border: none;
+			border-radius: 6px; 
+			padding: 5px 20px;
+		}
+		</style>
+	</head>
+	<body>
+		<h1 id="pips">-</h1>
+		<button id="rollTheDice">Würfeln!</button>
+		<script>
+			var RollTheDice=function(){
+				var value = Math.random() * 5 + 1; 
+				value = Math.round(value); 
+				return value; 
+			}; 
+
+			var pipsElement = document.querySelector('#pips');
+			var button = document.querySelector('#rollTheDice'); 
+
+			button.addEventListener('click', function(){
+				pipsElement.innerHTML = RollTheDice(); 
+			}); 
+		</script>
+	</body>
+</html>
